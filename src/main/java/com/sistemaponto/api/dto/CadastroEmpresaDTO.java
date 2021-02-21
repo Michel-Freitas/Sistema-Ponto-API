@@ -35,7 +35,7 @@ public class CadastroEmpresaDTO implements Serializable{
     private String cpf;
 
     @NotEmpty(message = "CNPJ não pode ser vazio.")
-    @CNPJ(message = "CPF Inválido!")
+    @CNPJ(message = "CNPJ Inválido!")
     private String cnpj;
 
     @NotEmpty(message = "Razão Social não pode ser vazio.")

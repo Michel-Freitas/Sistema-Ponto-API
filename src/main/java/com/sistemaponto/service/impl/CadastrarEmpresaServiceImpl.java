@@ -43,7 +43,7 @@ public class CadastrarEmpresaServiceImpl implements CadastrarEmpresaService{
 		logCadastrarEmpresaServiceImpl.info("Cadastrando empresa: {}", novaEmpresa.toString());
 		Empresa empresa = this.empresaAssembler.toEmpresa(novaEmpresa);
 		logCadastrarEmpresaServiceImpl.info("Montando empresa: {}", empresa.toString());
-		Funcionario funcionario = this.funcionarioAssembler.toFuncionario(novaEmpresa);
+		Funcionario funcionario = this.funcionarioAssembler.toFuncionarioEmpresa(novaEmpresa);
 		funcionario.setPerfil(PerfilEnum.ROLE_ADMIN);
 		logCadastrarEmpresaServiceImpl.info("Montando funcionario: {}", funcionario.toString());
 		

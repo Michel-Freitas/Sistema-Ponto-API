@@ -1,7 +1,6 @@
 package com.sistemaponto.api.dto;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -36,9 +35,9 @@ public class CadastroFuncionarioDTO implements Serializable{
 	@NotEmpty(message = "CPF não pode ser vazio.")
 	@CPF(message="CPF inválido")
 	private String cpf;
-	private Optional<String> valorHora = Optional.empty();
-	private Optional<String> qtdHorasTrabalhoDia = Optional.empty();
-	private Optional<String> qtdHorasAlmoco = Optional.empty();
+	private String valorHora;
+	private String qtdHorasTrabalhadoDia;
+	private String qtdHorasAlmoco;
 	
 	@NotEmpty(message = "CNPJ não pode ser vazio.")
 	@CNPJ(message="CNPJ inválido.")

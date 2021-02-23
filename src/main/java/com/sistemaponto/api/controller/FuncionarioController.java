@@ -11,22 +11,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sistemaponto.api.dto.CadastroEmpresaDTO;
+import com.sistemaponto.api.dto.CadastroFuncionarioDTO;
 import com.sistemaponto.api.response.Response;
-import com.sistemaponto.service.CadastrarEmpresaService;
-
+import com.sistemaponto.service.CadastrarFuncionarioService;
 
 @RestController
-@RequestMapping(value = "empresa")
+@RequestMapping(value = "funcionario")
 @CrossOrigin(origins = "*")
-public class EmpresaController {
+public class FuncionarioController {
 	
 	@Autowired
-	private CadastrarEmpresaService cadastrarEmpresaService;
-	
-	@PostMapping
-	public ResponseEntity<Response<CadastroEmpresaDTO>> cadastrarEmpresa(@Valid @RequestBody CadastroEmpresaDTO novaEmpresa, BindingResult result) {
-		return cadastrarEmpresaService.cadastrarEmpresa(novaEmpresa, result);
-	}
+	private CadastrarFuncionarioService cadastrarFuncionarioService;
 
+	@PostMapping
+	public ResponseEntity<Response<CadastroFuncionarioDTO>> cadastrarFuncionario(@Valid @RequestBody CadastroFuncionarioDTO novoFuncionario, BindingResult result) {
+		return this.cadastrarFuncionarioService.cadastrarFuncionario(novoFuncionario, result);
+	}
 }

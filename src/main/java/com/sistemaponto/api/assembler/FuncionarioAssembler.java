@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.sistemaponto.api.dto.CadastroEmpresaDTO;
 import com.sistemaponto.api.dto.CadastroFuncionarioDTO;
+import com.sistemaponto.api.dto.FuncionarioDTO;
 import com.sistemaponto.entity.Funcionario;
 
 @Component
@@ -20,6 +21,16 @@ public class FuncionarioAssembler {
 	
 	public Funcionario toFuncionarioEmpresa(CadastroEmpresaDTO novaEmpresa) {
 		return modelMapper.map(novaEmpresa, Funcionario.class);
+	}	
+	
+	public Funcionario toFuncionario(Funcionario funcionario, FuncionarioDTO funcionarioDto) {
+		funcionario.setNome(funcionarioDto.getNome());
+		funcionario.setEmail(funcionarioDto.getEmail());
+		funcionario.setSenha(funcionarioDto.getSenha());
+		funcionario.setValorHora(funcionarioDto.getValorHora());
+		funcionario.setQtdHorasTrabalhadoDia(funcionarioDto.getQtdHorasTrabalhadoDia());
+		funcionario.setQtdHorasAlmoco(funcionarioDto.getQtdHorasAlmoco());
+		return funcionario;
 	}
 	
 }
